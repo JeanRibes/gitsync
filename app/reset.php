@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="refresh" content="0; URL=index.php"></head>
+<html><head><meta http-equiv="refresh" content="0; URL=./"></head>
 <body>
 <?php
 echo `git reset --hard origin/master`;

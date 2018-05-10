@@ -8,9 +8,9 @@
 		<a href="/fetch.php">Mettre à jour manuellement</a>
 		<footer>
 			Liste des commits :<br>
-		<?php
-		   echo `git log --pretty="<a href='https://github.com/BdEINSALyon/site-dev/commit/%H'>%s</a>"`;
-		?>
+		<ul><?php
+		   echo `git log --pretty="<li><a href='https://github.com/BdEINSALyon/site-dev/commit/%H'>%s</a></li>"`;
+		?></ul>
 		</footer>
 	</body>
 </html>

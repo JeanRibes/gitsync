@@ -1,1 +1,1 @@
-<?php `git pull --autostash`; ?>
+<?php `git pull`; ?>

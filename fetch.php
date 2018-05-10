@@ -3,7 +3,7 @@
 </head>
 <body>
 <?php
-`git fetch --all`
+echo "<pre>".`git fetch --all`."</pre>";
 ?>
 </body>
 </html>

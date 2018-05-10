@@ -1,5 +1,5 @@
 <html><head>
-<meta http-equiv="refresh" content="0; URL=https://test.ribes.me/reset.php">
+<meta http-equiv="refresh" content="0; URL=/reset.php">
 </head>
 <body>
 <?php

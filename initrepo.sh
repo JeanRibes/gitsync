@@ -10,3 +10,4 @@ chown -R nobody:nobody .
 rm index.php
 touch supervisord.log
 chmod a-r supervisord.log
+echo "Now launching the webserver"

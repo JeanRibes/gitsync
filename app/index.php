@@ -1,5 +1,5 @@
-<html lang="fr">
-<head><title>Gestion Git php</title>
+<html lang="en">
+<head><title>Gitsync</title>
     <meta charset="utf-8">
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
@@ -10,25 +10,25 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="display-4">CI/CD ghetto</h1>
+    <h1 class="display-4">Ghetto CI/CD</h1>
     <div class="alert alert-info" role="alert">
-        <p class="lead">Ce site est mis à jour autmatiquement depuis la branche master par un Webhook GitHub, qui
-            effectue juste <code>git pull</code>.</p>
-        <p class="">À utiliser en cas de problème, la mise à jour manuelle force les changements depuis le serveur, avec
-            les commandes suivantes :</p>
+        <p class="lead">This website automatically updated itself with <code>git pull</code> if you set up a Webhook pointing
+            to <mark id="webhook"></mark>.</p>
+        <p class="">If for any reason (like being unable to setup webhooks), your code does not appear here, you can also manually update,
+        as if running</p>
         <pre><code>git fetch --all
 git reset --hard origin/master</code></pre>
 
         <hr>
-        <a class="btn btn-outline-primary" href="/fetch.php"><i class="fas fa-arrow-alt-circle-up"></i> Mettre à jour
-            manuellement</a>
+        <a class="btn btn-outline-primary" href="fetch.php"><i class="fas fa-arrow-alt-circle-up"></i> Manual update</a>
+        <a class="btn btn-primary" href="<?php echo getenv('GITHUB_URL');?>"><i class="fab fa-github"></i> Repository</a>
     </div>
     <div class="alert alert-warning">
-        <p>Vous serez redirigés deux fois pour effectuer les deux commandes de la mise à jour, et cela vous ramènera sur cette page</p>
+        <p>You will be redirected twice during the process. When finished, you should see new commits appear below</p>
     </div>
     <div class="card">
         <div class="card-body">
-            <p class="lead">Liste des commits</p>
+            <p class="lead">Commits</p>
             <ul class="list-group">
 <?php 
 $repo_url = getenv('GITHUB_URL');
@@ -42,6 +42,13 @@ echo `git log --pretty="<li class='list-group-item'><a
     </div>
 
 </div>
+<script>
+    (function() {
+   var webhook = document.getElementById("webhook");
+   webhook.innerText = document.location.href + "hook.php";
+
+})();
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

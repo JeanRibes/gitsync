@@ -1,0 +1,15 @@
+version: 2
+
+services:
+  gitsync:
+    image: jeanribes/gitsync
+    container_name: gitsync
+    environment:
+      - GITHUB_URL=https://github.com/BdEINSALyon/site-dev
+    volumes:
+      - synced-repo:/var/www/html
+    expose:
+      - 80
+volumes:
+  synced-repo:
+

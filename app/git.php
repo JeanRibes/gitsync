@@ -30,8 +30,10 @@ git reset --hard origin/master</code></pre>
         <div class="card-body">
             <p class="lead">Liste des commits</p>
             <ul class="list-group">
-                <?php echo `git log --pretty="<li class='list-group-item'><a
-                    href='https://github.com/BdEINSALyon/site-dev/commit/%H'>%h</a> %s
+<?php 
+$repo_url = getenv('GITHUB_URL');
+echo `git log --pretty="<li class='list-group-item'><a
+                    href='$repo_url/commit/%H'>%h</a> %s
                 <small class="text-muted">%cr</small>
                 <p><span class='badge badge-secondary'>%cn</span> %b %N</p></li>"
                 `; ?>

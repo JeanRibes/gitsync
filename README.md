@@ -15,7 +15,7 @@ The container exposes port 80
 ```
 git clone https://github.com/JeanRibes/gitsync.git
 docker build -t gitsync .
-docke run -d --name some-gitsync -e GITHUB_URL=https://github.com/nishanttotla/DockerStaticSite -p 8080:80 gitsync
+docker run -d --name some-gitsync -e GITHUB_URL=https://github.com/nishanttotla/DockerStaticSite -p 8080:80 gitsync
 ```
 # General use
 The webhook will only run `git pull`, but if you need to hard-reset, just update in the management interface.

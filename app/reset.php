@@ -1,6 +1,7 @@
 <html><head><meta http-equiv="refresh" content="0; URL=./"></head>
 <body>
 <?php
-echo `git reset --hard origin/master`;
+$branch = getenv('BRANCH')
+echo `git reset --hard origin/$branch`;
 ?>
 </body></html>

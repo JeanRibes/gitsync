@@ -11,13 +11,12 @@ Set the following environnment variables :
 GITHUB_URL=https://github.com/yourUsername/yourRepository  #without the ".git" !!!
 BRANCH=master  #or any other branch you want to pull
 ```
-It is preferable to mount a volume on ``/var/www/html``
 The container exposes port 80
 ## Example
 ```
-docker volume create gitsync-repo
 docker pull jeanribes/gitsync
-docker run -d --name some-gitsync -v gitsync-repo:/var/www/html -e GITHUB_URL=https://github.com/nishanttotla/DockerStaticSite -p 8080:80 jeanribes/gitsync
+docker run -d --name some-gitsync -e GITHUB_URL=https://github.com/nishanttotla/DockerStaticSite \
+                -e BRANCH=master -p 8080:80 jeanribes/gitsync
 ```
 # General use
 The webhook will only run `git pull`, but if you need to hard-reset, just update in the management interface.
@@ -25,7 +24,7 @@ The webhook will only run `git pull`, but if you need to hard-reset, just update
 You can see the repo url and all the applied commits in the management interface
 
 # Security
-Although the only code injection I see would be through the environnment variable GITLAB_URL, I don't recommend using this elsewhere than in a dev environnment
+An attacker could potentially inject code through the GITHUB_URL and BRANCH env vars, but he would have already compromised your docker host, so ...
 # TODO
 Currently, the repo is cloned whenever you start (or restart) the container.
 After the first startup, the clone just fails, but it's OK

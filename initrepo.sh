@@ -1,8 +1,7 @@
 #!/bin/sh
 cd /var/www/html
-rm index.html
-rm index.php
-echo "cloning $GITHUB_URL using branch $BRANCH"
+echo "cloning $GITHUB_URL.git using branch $BRANCH"
+echo "be sure to remove the trailing .git or the setup will fail !"
 read
 git init
 git remote add origin $GITHUB_URL.git

@@ -3,13 +3,10 @@ version: 2
 services:
   gitsync:
     image: jeanribes/gitsync
-    container_name: gitsync
+    container_name: some-gitsync
     environment:
-      - GITHUB_URL=https://github.com/BdEINSALyon/site-dev
-    volumes:
-      - synced-repo:/var/www/html
+      - GITHUB_URL=https://github.com/nishanttotla/DockerStaticSite
+      - BRANCH=master
     expose:
       - 80
-volumes:
-  synced-repo:
 

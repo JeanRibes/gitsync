@@ -9,6 +9,7 @@ so that when you push to the **master** branch, your code is automatically pulle
 Set the following environnment variables :
 ```
 GITHUB_URL=https://github.com/yourUsername/yourRepository  #without the ".git" !!!
+BRANCH=master  #or any other branch you want to pull
 ```
 It is preferable to mount a volume on ``/var/www/html``
 The container exposes port 80

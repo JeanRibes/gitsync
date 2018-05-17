@@ -14,7 +14,7 @@
     <div class="alert alert-info" role="alert">
         <p class="lead">This website automatically updated itself with <code>git pull</code> if you set up a Webhook pointing
             to <mark id="webhook"></mark>.</p>
-        <p>It will pull the <strong>master</strong> branch</p>
+	    <p>It will pull the <strong><?php echo getenv('BRANCH'); ?></strong> branch</p>
         <p class="">If for any reason (like being unable to setup webhooks), your code does not appear here, you can also manually update,
         as if running</p>
         <pre><code>git fetch --all

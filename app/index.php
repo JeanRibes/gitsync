@@ -21,6 +21,7 @@
 git reset --hard origin/master</code></pre>
 
         <hr>
+        <a class="btn btn-outline-success" href="../">Go back</a>
         <a class="btn btn-outline-primary" href="fetch.php"><i class="fas fa-arrow-alt-circle-up"></i> Manual update</a>
         <a class="btn btn-primary" href="<?php echo getenv('GITHUB_URL');?>"><i class="fab fa-github"></i> Repository</a>
     </div>
